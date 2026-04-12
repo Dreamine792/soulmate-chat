@@ -8,7 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: radial-gradient(ellipse at center bottom, #3a0a6e 0%, #1a0535 40%, #0a0015 100%);
+    background: radial-gradient(ellipse at center bottom, #6e0a0a 0%, #350505 40%, #150000 100%);
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     display: flex;
@@ -25,7 +25,7 @@
   }
 
   #chat-header {
-    background: #7B2FBE;
+    background: #9B1515;
     padding: 10px 16px;
     display: flex;
     align-items: center;
@@ -37,7 +37,6 @@
   #header-avatar {
     width: 42px; height: 42px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #c8a, #a86);
     overflow: hidden; flex-shrink: 0;
     border: 2px solid rgba(255,255,255,0.3);
     display: flex; align-items: center; justify-content: center;
@@ -122,7 +121,7 @@
   .social-photo.sketch { background: linear-gradient(135deg,#e8e8e8,#ccc); }
   .social-photo.real { background: linear-gradient(135deg,#c0a080,#8a6050); }
   .cta-bubble {
-    background: linear-gradient(135deg, #e8e0f8, #d0c0f0);
+    background: linear-gradient(135deg, #f8e0e0, #f0c0c0);
     border-radius: 12px; border-bottom-left-radius: 3px;
     padding: 16px; max-width: 340px; text-align: center;
   }
@@ -144,14 +143,14 @@
     display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding: 8px 16px;
   }
   .choice-btn {
-    background: #7B2FBE; color: white; border: none; border-radius: 20px;
+    background: #9B1515; color: white; border: none; border-radius: 20px;
     padding: 10px 20px; font-size: 14px; cursor: pointer;
     transition: background 0.2s, transform 0.1s; max-width: 85%; text-align: center;
   }
-  .choice-btn:hover { background: #6b1fae; transform: scale(1.02); }
+  .choice-btn:hover { background: #7a0f0f; transform: scale(1.02); }
   #input-area {
     position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 100%; max-width: 760px; background: #1a0535;
+    width: 100%; max-width: 760px; background: #350505;
     padding: 10px 14px; display: none; gap: 8px; align-items: center;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
@@ -163,7 +162,7 @@
   }
   #user-input::placeholder { color: rgba(255,255,255,0.4); }
   #send-btn {
-    width: 40px; height: 40px; border-radius: 50%; background: #7B2FBE;
+    width: 40px; height: 40px; border-radius: 50%; background: #9B1515;
     border: none; cursor: pointer; display: flex; align-items: center;
     justify-content: center; flex-shrink: 0;
   }
@@ -176,7 +175,7 @@
 </head><body>
 <div id="chat-wrapper">
   <div id="chat-header">
-    <div id="header-avatar">🔮</div>
+    <div id="header-avatar"><img src="https://soulmatedivine.com/wp-content/uploads/2024/04/THERESA-PROFILE.webp" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.parentElement.textContent='🔮'" /></div>
     <div id="header-info">
       <div id="header-name">Theresa Caputo</div>
       <div id="header-status"><span id="status-dot"></span><span id="status-text">typing...</span></div>
@@ -223,9 +222,10 @@
   async function step5(sign){userSign=sign;hideInput();addUser(sign);await delay(400);await botSay('What a coincidence, <b>'+userName+'</b>, I am also <b>'+userSign+'</b>.',1500);await delay(300);await botSay('What is your date of birth?',1200);showInput('Example: 03/15/1990','dob');}
   async function step6(dob){hideInput();addUser(dob);await delay(400);await botSay('What time were you born? If you don\'t know the exact time, that\'s okay...',1500);showInput('Example: 15:30','time');}
   async function step7(time){hideInput();addUser(time);await delay(400);await botSay('And lastly, how is your love life going?',1400);addChoices([{label:'I am in a serious relationship.',fn:()=>step8('I am in a serious relationship.')},{label:"I'm getting to know or talking to someone.",fn:()=>step8("I'm getting to know or talking to someone.")},{label:'I am single at the moment!',fn:()=>step8('I am single at the moment!')}]);}
-  async function step8(choice){clearChoices();addUser(choice);const isSingle=choice.includes('single');await delay(400);if(isSingle){await botSay('Then you\'re single, <b>'+userName+'</b>!',1400);await botSay('It\'s very rare to find a <b>'+userSign+'</b> single. I feel like you have such a good heart...',1800);}else if(choice.includes('serious')){await botSay('I can feel the energy around your relationship, <b>'+userName+'</b>...',1400);await botSay('Even so, there is a <b>'+userSign+'</b> soul that is deeply connected to yours and thinking of you constantly.',1800);}else{await botSay('I see, <b>'+userName+'</b>. The energy around you is very interesting...',1400);await botSay('There is someone — a <b>'+userSign+'</b> connection — who has been thinking about you intensely.',1800);}await delay(200);addAudio('0:21');await delay(1800);await botSay('One day, these women were also where you are, talking to me...<br><br>And after some time, they sent me these photos 👇',2000);await delay(400);addSocial('Jennifer Smith','jennifersmith','I was getting to know a guy and had doubts if he was the right one. I asked @MadameTheresa to draw my soulmate... when I received the drawing, it was exactly him!!🤯','🎨','👫');await delay(800);await botSay('This is Mayara. She also asked me to reveal the name and traits of the person in the drawing!',1800);await delay(400);addSocial('Mayara Rodrigues','mayararodrigues','¡¡100% grateful to the psychic Serena!! You showed me exactly who my soulmate is! The drawing I received is from my current boyfriend 😍','✏️','💑');await delay(800);await botSay('This is Olivia, in less than 1 month, she had already found the person in the drawing!',1800);await delay(400);await botSay('Isn\'t it amazing, <b>'+userName+'</b>? Would you like to see the characteristics of your soulmate too?',1800);addChoices([{label:'Yes, I want to see the characteristics of my soulmate!',fn:step9},{label:'I prefer to see just the drawing, please!',fn:step9}]);}  async function step9(){clearChoices();addUser('Yes, I want to see the characteristics of my soulmate!');await delay(400);await botSay('Perfect, <b>'+userName+'</b>. Can I start creating your drawing?',1500);showInput('Your answer...','free');}
+  async function step8(choice){clearChoices();addUser(choice);const isSingle=choice.includes('single');await delay(400);if(isSingle){await botSay('Then you\'re single, <b>'+userName+'</b>!',1400);await botSay('It\'s very rare to find a <b>'+userSign+'</b> single. I feel like you have such a good heart...',1800);}else if(choice.includes('serious')){await botSay('I can feel the energy around your relationship, <b>'+userName+'</b>...',1400);await botSay('Even so, there is a <b>'+userSign+'</b> soul that is deeply connected to yours and thinking of you constantly.',1800);}else{await botSay('I see, <b>'+userName+'</b>. The energy around you is very interesting...',1400);await botSay('There is someone — a <b>'+userSign+'</b> connection — who has been thinking about you intensely.',1800);}await delay(200);addAudio('0:21');await delay(1800);await botSay('One day, these women were also where you are, talking to me...<br><br>And after some time, they sent me these photos 👇',2000);await delay(400);addSocial('Jennifer Smith','jennifersmith','I was getting to know a guy and had doubts if he was the right one. I asked @MadameTheresa to draw my soulmate... when I received the drawing, it was exactly him!!🤯','🎨','👫');await delay(800);await botSay('This is Mayara. She also asked me to reveal the name and traits of the person in the drawing!',1800);await delay(400);addSocial('Mayara Rodrigues','mayararodrigues','¡¡100% grateful to the psychic Serena!! You showed me exactly who my soulmate is! The drawing I received is from my current boyfriend 😍','✏️','💑');await delay(800);await botSay('This is Olivia, in less than 1 month, she had already found the person in the drawing!',1800);await delay(400);await botSay('Isn\'t it amazing, <b>'+userName+'</b>? Would you like to see the characteristics of your soulmate too?',1800);addChoices([{label:'Yes, I want to see the characteristics of my soulmate!',fn:step9},{label:'I prefer to see just the drawing, please!',fn:step9}]);}
+  async function step9(){clearChoices();addUser('Yes, I want to see the characteristics of my soulmate!');await delay(400);await botSay('Perfect, <b>'+userName+'</b>. Can I start creating your drawing?',1500);showInput('Your answer...','free');}
   async function step10(answer){hideInput();addUser(answer);await delay(400);const recap=document.createElement('div');recap.style.cssText='display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:4px 0';[userName,'Scorpio','03/15/1990'].forEach(t=>{const b=document.createElement('div');b.className='msg-bubble bot';b.textContent=t;recap.appendChild(b);});msgsEl.appendChild(recap);scrollBottom();await delay(600);await botSay('I am consulting your astrological chart now. Please do not cross your arms or legs. I am visualizing very important information about your soulmate!',2500);await botSay('I will analyze your Chart deeply, and with my Gift, I will concentrate to draw the face I am visualizing.',2000);addAudio('0:16');await delay(1800);addAudio('0:11');await delay(1500);await botSay('To send you the drawing as soon as I finish, I just need your confirmation. Please click the button below to confirm!',1800);addChoices([{label:'YES, DRAW MY SOULMATE!',fn:step11}]);}
-  async function step11(){clearChoices();addUser('YES, DRAW MY SOULMATE!');await delay(400);await botSay('You are very close to experiencing a special moment! But now, <b>pay close attention, dear...</b>',1800);await botSay('I am not charging anything for the consultation.',1400);addAudio('0:19');await delay(1500);await botSay('The fee is only <b>$19.90</b>',1200);addAudio('0:17');await delay(1500);await botSay('I will leave a <b>button below</b> for you to make the payment of the fee. After that, I will send the portrait of your soulmate by email and provide personal guidance to you over the next few months, so that the universe can quickly manifest the person destined to have a special connection with you.',2800);await botSay('In addition to the photo of your soulmate, something very unusual revealed itself during your reading... and I could not ignore it.',2000);await botSay('So, I will also prepare a secret and exclusive bonus that I will only release to you.',1600);await botSay('This secret bonus will leave you speechless, and I could charge a lot for it, but I am going to send it to you for free.',2000);await botSay('But so I know it is really you, I am going to ask you a small favor to make it easier for me to find your email:',1800);await botSay('On the payment screen, when you are about to type your email address to receive access, do the following: type the number <b>1</b>, and ONLY AFTER that, your full email address.',2200);await botSay('For example, if your email is <b>sarah@gmail.com</b>, you will type <b>1sarah@gmail.com</b>.',1800);await botSay('It is a secret code, a signal between us.',1400);await botSay('That way, I can find your email more easily by searching for the number <b>1</b> in the system, and I will personally send you this bonus.',2000);await botSay('So remember: the <b>"1"</b> before your email address, and the <b>Secret Bonus</b> is yours!',1800);addAudio('0:24');await delay(1500);addCTA('YES! I WANT TO RECEIVE MY SOULMATE DRAWING!','YOUR_CHECKOUT_LINK_HERE');addAudio('0:24');await delay(800);await botSay('I will be right here waiting, <b>'+userName+'</b>. The universe is already working to bring you two together. 🔮💕',2000);}
+  async function step11(){clearChoices();addUser('YES, DRAW MY SOULMATE!');await delay(400);await botSay('You are very close to experiencing a special moment! But now, <b>pay close attention, dear...</b>',1800);await botSay('I am not charging anything for the consultation.',1400);addAudio('0:19');await delay(1500);await botSay('The fee is only <b>$19.90</b>',1200);addAudio('0:17');await delay(1500);await botSay('I will leave a <b>button below</b> for you to make the payment. After that, I will send the portrait of your soulmate by email.',2800);await botSay('In addition to the photo of your soulmate, something very unusual revealed itself during your reading... and I could not ignore it.',2000);await botSay('So, I will also prepare a secret and exclusive bonus that I will only release to you.',1600);await botSay('This secret bonus will leave you speechless, and I could charge a lot for it, but I am going to send it to you for free.',2000);await botSay('On the payment screen, type the number <b>1</b> before your email. Example: if your email is <b>sarah@gmail.com</b>, type <b>1sarah@gmail.com</b>.',2200);await botSay('It is a secret code, a signal between us. That way I can send you the bonus!',1800);addAudio('0:24');await delay(1500);addCTA('YES! I WANT TO RECEIVE MY SOULMATE DRAWING!','YOUR_CHECKOUT_LINK_HERE');await delay(800);await botSay('I will be right here waiting, <b>'+userName+'</b>. The universe is already working to bring you two together. 🔮💕',2000);}
   function sendUserInput(){const v=userInputEl.value.trim();if(!v)return;if(inputMode==='name')step3(v);else if(inputMode==='sign')step5(v);else if(inputMode==='dob')step6(v);else if(inputMode==='time')step7(v);else if(inputMode==='free')step10(v);}
   userInputEl.addEventListener('keydown',e=>{if(e.key==='Enter')sendUserInput();});
   startFlow();
